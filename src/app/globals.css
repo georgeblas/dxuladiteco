@@ -1,0 +1,36 @@
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+a { color: inherit; }
+button { font: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #B8862B;
+  outline-offset: 2px;
+}
+input::placeholder, textarea::placeholder { color: #4A2C1766; }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Cinta infinita de productos */
+.dxu-marquee {
+  animation: dxu-scroll 32s linear infinite;
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) {
+  .dxu-marquee:hover { animation-play-state: paused; }
+}
+@keyframes dxu-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* Flotado individual de cada pieza */
+.dxu-float {
+  animation-name: dxu-bob;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes dxu-bob {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
