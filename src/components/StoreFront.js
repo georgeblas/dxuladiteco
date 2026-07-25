@@ -138,17 +138,10 @@ export default function StoreFront({ config, categories, products }) {
       {/* cinta de productos en movimiento — protagonista bajo el header */}
       <ProductMarquee grande products={products} config={config} onPick={(p) => setDetail(p)} />
 
-      {/* hero */}
-      <section style={{ background: `radial-gradient(1200px 500px at 70% -10%, ${C.bugambilia}1F, transparent), ${C.fondo}` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "56px 18px 44px" }}>
-          <div style={{ fontFamily: T.body, fontSize: 12, letterSpacing: ".2em", color: C.oro, fontWeight: 700, textTransform: "uppercase", marginBottom: 14 }}>
-            Molino tradicional · Istmo de Tehuantepec
-          </div>
-          <h1 style={{ ...S.h("clamp(28px, 6vw, 52px)"), lineHeight: 1.15, maxWidth: 760 }}>{config.heroTitulo}</h1>
-          <p style={{ fontFamily: T.body, color: C.crema + "CC", fontSize: 16, lineHeight: 1.6, maxWidth: 520, margin: "18px 0 26px" }}>{config.heroTexto}</p>
-        </div>
+      {/* separador decorativo (hero de texto removido a solicitud de pruebas; campos heroTitulo/heroTexto siguen en /admin) */}
+      <div style={{ background: C.fondo, padding: "22px 0" }}>
         <Greca id="hero" color={C.oro} />
-      </section>
+      </div>
 
       {/* catálogo */}
       <section id="catalogo" style={{ maxWidth: 1100, margin: "0 auto", padding: "34px 18px 60px" }}>
