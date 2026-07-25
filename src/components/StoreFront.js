@@ -135,6 +135,23 @@ export default function StoreFront({ config, categories, products }) {
         </div>
       </header>
 
+      {/* hero de video estilo campaña (full-bleed, autoplay silenciado en loop) */}
+      <section style={{ position: "relative", width: "100%", height: "clamp(460px, 80vh, 820px)", overflow: "hidden", background: C.crema }}>
+        <video
+          src="/video-chocolate.mp4"
+          autoPlay muted loop playsInline preload="auto"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+        {/* velo inferior para dar legibilidad al botón */}
+        <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(180deg, rgba(0,0,0,.18) 0%, transparent 26%, transparent 58%, rgba(0,0,0,.5) 100%)" }} />
+        {/* CTA mínimo, estilo campaña */}
+        <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "0 18px 44px", display: "flex", justifyContent: "center" }}>
+          <a href="#catalogo" style={S.btn(C.fondo, C.crema, { textDecoration: "none", display: "inline-block", boxShadow: "0 8px 24px rgba(0,0,0,.28)", letterSpacing: ".08em", textTransform: "uppercase", fontSize: 13 })}>
+            Ver productos
+          </a>
+        </div>
+      </section>
+
       {/* cinta de productos en movimiento — protagonista bajo el header */}
       <ProductMarquee grande products={products} config={config} onPick={(p) => setDetail(p)} />
 
